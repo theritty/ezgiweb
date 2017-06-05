@@ -26,3 +26,25 @@ Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework 
 ## Copyright and License
 
 Copyright 2013-2016 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-business-casual/blob/gh-pages/LICENSE) license.
+
+<?php
+// Emails form data to you and the person submitting the form
+// This version requires no database.
+// Set your email below
+$myemail = "e1746668@ceng.metu.edu.tr"; // Replace with your email, please
+
+// Receive and sanitize input
+$name = $_POST['name'];
+$email = $_POST['email'];
+$phone = $_POST['phone'];
+$message = $_POST['message'];
+
+// set up email
+$msg = "New contact form submission!\nName: " . $name . "\nEmail: " . $email . "\nPhone: " . $phone . "\nEmail: " . $email;
+$msg = wordwrap($msg,70);
+mail($myemail,"New Form Submission",$msg);
+mail($email,"Thank you for your form submission",$msg);
+mail("e1746668@ceng.metu.edu.tr", "hello", "this message");
+echo 'Thank you for your submission.  Please <a href="home.html">Click here to return to our homepage.';
+
+?>
